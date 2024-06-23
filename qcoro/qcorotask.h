@@ -213,7 +213,7 @@ private:
  * See \ref TaskPromiseBase documentation for explanation about promise_type.
  */
 template<typename T>
-class TaskPromise final : public TaskPromiseBase {
+class TaskPromise : public TaskPromiseBase {
 public:
     explicit TaskPromise() = default;
     ~TaskPromise() = default;
