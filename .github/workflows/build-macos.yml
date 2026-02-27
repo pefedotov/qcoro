@@ -117,7 +117,7 @@ jobs:
 
     - name: Upload Test Results
       if: ${{ needs.detect_run.outputs.source_code_changed == 'true' && always() }}
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: Unit Tests Results (${{ matrix.platform }}-${{ matrix.compiler_full }}-qt-${{ matrix.qt_version }})
         path: |
@@ -125,7 +125,7 @@ jobs:
 
     - name: Upload build logs on failure
       if: ${{ needs.detect_run.outputs.source_code_changed == 'true' && failure() }}
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: build-${{ matrix.platform }}-${{ matrix.compiler_full }}-qt-${{ matrix.qt_version }}
         path: build/**
@@ -135,7 +135,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Upload
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: Event File
         path: ${{ github.event_path }}
