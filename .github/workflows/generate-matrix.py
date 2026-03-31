@@ -48,7 +48,7 @@ platforms = [
             },
             {
                 "name": "clang",
-                "versions": ["18", "20", "dev"]
+                "versions": ["18", "20", "22"]
             }
         ]
     }
