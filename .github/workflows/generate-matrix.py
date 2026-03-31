@@ -18,11 +18,11 @@ qt = [
         **qt5_config
     },
     {
-        "version": "6.2.0",
+        "version": "6.8.0",
         **qt6_config
     },
     {
-        "version": "6.5.0",
+        "version": "6.11.0",
         **qt6_config
     }
 ]
@@ -44,11 +44,11 @@ platforms = [
         "compilers": [
             {
                 "name": "gcc",
-                "versions": ["11", "12", "13", "14"]
+                "versions": ["13", "14", "15"]
             },
             {
                 "name": "clang",
-                "versions": ["15", "16", "17", "20", "dev"]
+                "versions": ["18", "20", "dev"]
             }
         ]
     }
