@@ -21,7 +21,7 @@ RUN apt-get update \
         dbus dbus-x11 \
         libglib2.0-dev libxkbcommon-dev libfreetype6-dev libfontconfig1-dev \
         libssl-dev \
-        libegl-dev libgl-dev
+        libegl-dev libgl-dev \
         libvulkan-dev
 
 # Install and set up clang
