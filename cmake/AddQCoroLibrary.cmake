@@ -31,10 +31,6 @@ function(set_target_defaults target_name)
             # Disable warning C5054: "operator '&': deprecated between enumerations of different types" caused by QtWidgets/qsizepolicy.h
             # Disable warning C4127: "conditional expression is constant" caused by QtCore/qiterable.h
             target_compile_options(${target_name} PRIVATE /wd5054 /wd4127)
-            if ("${QT_VERSION_MAJOR}" STREQUAL "6" AND "${Qt6_VERSION}" VERSION_GREATER_EQUAL "6.4.0" AND "${Qt6_VERSION}" VERSION_LESS "6.5.3")
-                # Disable warning C4702: "unreachable code" caused by QtTest/qtestcase.h - fixed in Qt 6.5.3
-                target_compile_options(${target_name} PRIVATE /wd4702)
-            endif()
         else()
             target_compile_options(${target_name} PRIVATE -Wall -Wextra -Werror -pedantic -Wno-language-extension-token)
         endif()
