@@ -38,13 +38,13 @@ RUN ln -s x86_64-linux-gnu /usr/lib/x86_64-unknown-linux-gnu
 WORKDIR /root
 # Necessary to allow using pip on newer images (--break-system-packages doesn't work on older images)
 RUN rm -f /usr/lib/python$(python3 --version | grep -oE "3.[0-9]+")/EXTERNALLY-MANAGED \
-    && pip3 install 'aqtinstall==3.2.0'
+    && pip3 install 'aqtinstall==3.3.0'
 COPY install-qt.sh ./install-qt.sh
 RUN ./install-qt.sh "${qt_version}" "${qt_modules}" "${qt_archives}"
 
 # Set up environment
-ENV QT_BASE_DIR "/opt/qt/${qt_version}/gcc_64"
-ENV PATH "${QT_BASE_DIR}/bin:${PATH}"
+ENV QT_BASE_DIR="/opt/qt/${qt_version}/gcc_64"
+ENV PATH="${QT_BASE_DIR}/bin:${PATH}"
 ENV CMAKE_PREFIX_PATH="${QT_BASE_DIR}/lib/cmake"
-ENV LD_LIBRARY_PATH "${QT_BASE_DIR}/lib:${LD_LIBRARY_PATH}"
-ENV XDG_DATA_DIRS "${QT_BASE_DIR}/share:${XDG_DATA_DIRS}"
+ENV LD_LIBRARY_PATH="${QT_BASE_DIR}/lib:${LD_LIBRARY_PATH}"
+ENV XDG_DATA_DIRS="${QT_BASE_DIR}/share:${XDG_DATA_DIRS}"
