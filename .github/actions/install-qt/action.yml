@@ -27,16 +27,26 @@ runs:
     - name: Install Qt
       shell: bash
       run: |
-        pip3 install --break-system-packages aqtinstall~=2.1
+        # Last commit as of 2026-04-01 with support for the new Qt 6.11.0 release structure (until aqtinstall 3.4.0 is released)
+        pip3 install --break-system-packages git+https://github.com/miurahr/aqtinstall@073e34d7c2ab4ae6961ed7cca690b3abd5ba5a7e
         case "${{ inputs.platform }}" in
           "windows")
-            QT_ARCH="win64_msvc2019_64"
+            if [[ $(echo ${{ inputs.qt_version }} | cut -d'.' -f1) == "6" ]]; then
+              COMPILER="msvc2022_64"
+            else
+              COMPILER="msvc2019_64"
+            fi
+            QT_ARCH="win64_${COMPILER}"
             QT_INSTALL_PATH="C:\\Qt"
-            QT_BASE_DIR="${QT_INSTALL_PATH}\\${{ inputs.qt_version }}\\msvc2019_64"
+            QT_BASE_DIR="${QT_INSTALL_PATH}\\${{ inputs.qt_version }}\\${COMPILER}"
             QT_OS="windows"
             ;;
           "linux")
-            QT_ARCH="gcc_64"
+            if [[ "$(echo ${{ inputs.qt_version }} | cut -d'.' -f1)" == "6" ]]; then
+              QT_ARCH="linux_gcc_64"
+            else
+              QT_ARCH="gcc_64"
+            fi
             QT_INSTALL_PATH="/opt/qt"
             QT_BASE_DIR="${QT_INSTALL_PATH}/${{ inputs.qt_version }}/${QT_ARCH}"
             QT_OS="linux"
