@@ -76,6 +76,3 @@ runs:
         echo "LD_LIBRARY_PATH=${QT_BASE_DIR}/lib:${LD_LIBRARY_PATH}" >> $GITHUB_ENV
         echo "XDG_DATA_DIRS=${QT_BASE_DIR}/share:${XDG_DATA_DIRS}" >> $GITHUB_ENV
 
-        if [[ "${{ inputs.platform }}" == "windows" ]]; then
-          powershell "./.github/actions/install-qt/install-dbus.ps1" "$QT_BASE_DIR"
-        fi

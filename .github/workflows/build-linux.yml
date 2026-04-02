@@ -106,7 +106,9 @@ jobs:
       if: ${{ needs.detect_run.outputs.source_code_changed == 'true' }}
       run: |
         cd build
-        QT_LOGGING_TO_CONSOLE=1 ctest -C $BUILD_TYPE \
+        export QT_ASSUME_STDERR_HAS_CONSOLE=1
+        export QT_FORCE_STDERR_LOGGING=1
+        ctest -C $BUILD_TYPE \
           --output-on-failure \
           --verbose \
           --output-junit ${{ matrix.platform }}-${{ matrix.compiler_full }}-qt-${{ matrix.qt_version }}.xml
