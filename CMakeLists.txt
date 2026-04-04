@@ -84,7 +84,7 @@ if (BUILD_TESTING)
 endif()
 
 set(MIN_REQUIRED_QT5_VERSION "5.12")
-set(MIN_REQUIRED_QT6_VERSION "6.2.0")
+set(MIN_REQUIRED_QT6_VERSION "6.8")
 
 include(cmake/QCoroFindQt.cmake)
 # Find Qt. If USE_QT_VERSION is not set, it will try to look for Qt6 first
