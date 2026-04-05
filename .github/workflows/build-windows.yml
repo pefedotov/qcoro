@@ -93,9 +93,6 @@ jobs:
           # FIXME: allow ASAN with clang-cl
           EXTRA_CMAKE_FLAGS="${EXTRA_CMAKE_FLAGS} -T ClangCL -DQCORO_ENABLE_ASAN=OFF"
         fi
-        if [[ "${QT_VERSION_MAJOR}" == "5" ]]; then
-          EXTRA_CMAKE_FLAGS="${EXTRA_CMAKE_FLAGS} -DQCORO_ENABLE_ASAN=OFF"
-        fi
 
         cmake $GITHUB_WORKSPACE \
           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \

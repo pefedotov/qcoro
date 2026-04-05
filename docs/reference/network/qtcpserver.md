@@ -41,6 +41,6 @@ QCoro::Task<QTcpSocket *> QCoroTcpServer::waitForNewConnection(std::chrono::mill
 {% include "../../examples/qtcpserver.cpp" %}
 ```
 
-[qtdoc-qtcpserver]: https://doc.qt.io/qt-5/qtcpserver.html
-[qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-5/qtcpserver.html#waitForNewConnection
+[qtdoc-qtcpserver]: https://doc.qt.io/qt-6/qtcpserver.html
+[qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-6/qtcpserver.html#waitForNewConnection
 [qcoro-coro]: ../coro/coro.md

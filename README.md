@@ -7,7 +7,7 @@
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-%2300599C?logo=cplusplus)
 ![Supported Compilers](https://img.shields.io/badge/%E2%9A%99%EF%B8%8F%20Compilers-GCC%2C%20clang%2C%20MSVC-informational)
 
-# QCoro - Coroutines for Qt5 and Qt6
+# QCoro - Coroutines for Qt
 
 The QCoro library provides set of tools to make use of C++20 coroutines with Qt.
 

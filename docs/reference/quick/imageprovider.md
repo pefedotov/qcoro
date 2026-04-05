@@ -22,5 +22,5 @@ public:
 
 The subclass [can be registered with a `QQmlEngine`][qdoc-addimageprovider] like any `QQuickImageProvider` subclass.
 
-[qdoc-addimageprovider]: https://doc.qt.io/qt-5/qqmlengine.html#addImageProvider
-[qdoc-imageprovider]: https://doc.qt.io/qt-5/qquickimageprovider.html
+[qdoc-addimageprovider]: https://doc.qt.io/qt-6/qqmlengine.html#addImageProvider
+[qdoc-imageprovider]: https://doc.qt.io/qt-6/qquickimageprovider.html

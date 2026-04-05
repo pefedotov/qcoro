@@ -126,9 +126,9 @@ QCoro::AsyncGenerator<QString> QCoroWebSocket::textMessage(std::chrono::millisec
 ```
 
 
-[qtdoc-qwebsocket]: https://doc.qt.io/qt-5/qwebsocket.html
-[qtdoc-qwebsocket-open-qurl]: https://doc.qt.io/qt-5/qwebsocket.html#open
-[qtdoc-qwebsocket-open-qnetworkrequest]: https://doc.qt.io/qt-5/qwebsocket.html#open-1
-[qtdoc-qwebsocket-ping]: https://doc.qt.io/qt-5/qwebsocket.html#ping
+[qtdoc-qwebsocket]: https://doc.qt.io/qt-6/qwebsocket.html
+[qtdoc-qwebsocket-open-qurl]: https://doc.qt.io/qt-6/qwebsocket.html#open
+[qtdoc-qwebsocket-open-qnetworkrequest]: https://doc.qt.io/qt-6/qwebsocket.html#open-1
+[qtdoc-qwebsocket-ping]: https://doc.qt.io/qt-6/qwebsocket.html#ping
 
 [qcoro-async-generator]: ../coro/asyncgenerator.md

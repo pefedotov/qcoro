@@ -184,11 +184,7 @@ private Q_SLOTS:
         QVERIFY(it != generator.end());
         QCOMPARE(*it, 1);
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         QVERIFY_THROWS_EXCEPTION(std::runtime_error, ++it);
-#else
-        QVERIFY_EXCEPTION_THROWN(++it, std::runtime_error);
-#endif
         QCOMPARE(it, generator.end());
     }
 
@@ -198,11 +194,7 @@ private Q_SLOTS:
             co_yield 1;
         }();
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         QVERIFY_THROWS_EXCEPTION(std::runtime_error, generator.begin());
-#else
-        QVERIFY_EXCEPTION_THROWN(generator.begin(), std::runtime_error);
-#endif
     }
 };
 

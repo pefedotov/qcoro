@@ -18,6 +18,4 @@ add_qcoro_library(
         PUBLIC Coro
 )
 
-if (${QT_VERSION_MAJOR} STREQUAL "6")
-    target_link_libraries(QCoro${QT_VERSION_MAJOR}Qml PRIVATE Qt::QmlPrivate)
-endif()
+target_link_libraries(QCoro${QT_VERSION_MAJOR}Qml PRIVATE Qt::QmlPrivate)

@@ -22,4 +22,4 @@ target_link_libraries(my-target QCoro::Quick)
 QT += QCoroQuick
 ```
 
-[qtdoc-qtquick]: https://doc.qt.io/qt-5/qtquick-index.html
+[qtdoc-qtquick]: https://doc.qt.io/qt-6/qtquick-index.html

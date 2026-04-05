@@ -121,4 +121,4 @@ QCORO_FOREACH(const QString &value, createGenerator()) {
 
 [qcoro-generator]: ./generator.md
 [p0664r8c35]: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0664r8.html#35
-[qdoc-qforeach]: https://doc.qt.io/qt-5/qtglobal.html#Q_FOREACH
+[qdoc-qforeach]: https://doc.qt.io/qt-6/qtglobal.html#Q_FOREACH

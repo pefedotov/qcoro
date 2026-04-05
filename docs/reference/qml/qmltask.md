@@ -61,5 +61,5 @@ Item {
 ```
 
 
-[qdoc-qml]: https://doc.qt.io/qt-5/qvariant.html
+[qdoc-qml]: https://doc.qt.io/qt-6/qvariant.html
 [qcoro-task]: ../coro/task.md

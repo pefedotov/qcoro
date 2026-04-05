@@ -25,4 +25,4 @@ target_link_libraries(my-target QCoro::Network)
 QT += QCoroNetwork
 ```
 
-[qtdoc-qtnetwork]: https://doc.qt.io/qt-5/qtnetwork-index.html
+[qtdoc-qtnetwork]: https://doc.qt.io/qt-6/qtnetwork-index.html

@@ -33,12 +33,7 @@ public:
             }
         }))
         , mError(connect(socket, qOverload<QAbstractSocket::SocketError>(
-#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
-                                     &QWebSocket::errorOccurred
-#else
-                                     &QWebSocket::error
-#endif
-                                     ), this, [this](auto error) {
+                                     &QWebSocket::errorOccurred), this, [this](auto error) {
             qWarning() << "QWebSocket failed to connect to a websocket server: " << error;
             emitReady(false);
         }))

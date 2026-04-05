@@ -140,11 +140,11 @@ const QByteArray data = co_await qCoro(device).readAll();
 
 [qlocalsocket]: ../network/qlocalsocket.md
 [qcoro-coro]: ../coro/coro.md
-[qtdoc-qiodevice]: https://doc.qt.io/qt-5/qiodevice.html
-[qtdoc-qiodevice-read]: https://doc.qt.io/qt-5/qiodevice.html#read
-[qtdoc-qiodevice-readyread]: https://doc.qt.io/qt-5/qiodevice.html#readyRead
-[qtdoc-qiodevice-readall]: https://doc.qt.io/qt-5/qiodevice.html#readAll
-[qtdoc-qiodevice-readline]: https://doc.qt.io/qt-5/qiodevice.html#readLine
-[qtdoc-qiodevice-waitforreadyread]: https://doc.qt.io/qt-5/qiodevice.html#waitForReadyRead
-[qtdoc-qiodevice-waitforbyteswritten]: https://doc.qt.io/qt-5/qiodevice.html#waitForBytesWritten
+[qtdoc-qiodevice]: https://doc.qt.io/qt-6/qiodevice.html
+[qtdoc-qiodevice-read]: https://doc.qt.io/qt-6/qiodevice.html#read
+[qtdoc-qiodevice-readyread]: https://doc.qt.io/qt-6/qiodevice.html#readyRead
+[qtdoc-qiodevice-readall]: https://doc.qt.io/qt-6/qiodevice.html#readAll
+[qtdoc-qiodevice-readline]: https://doc.qt.io/qt-6/qiodevice.html#readLine
+[qtdoc-qiodevice-waitforreadyread]: https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead
+[qtdoc-qiodevice-waitforbyteswritten]: https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten
 

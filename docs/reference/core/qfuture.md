@@ -101,8 +101,8 @@ This is equivalent to using the [`result()`](#result) method.
 {% include "../../examples/qfuture.cpp" %}
 ```
 
-[qdoc-qfuture]: https://doc.qt.io/qt-5/qfuture.html
-[qdoc-qfuturewatcher]: https://doc.qt.io/qt-5/qfuturewatcher.html
+[qdoc-qfuture]: https://doc.qt.io/qt-6/qfuture.html
+[qdoc-qfuturewatcher]: https://doc.qt.io/qt-6/qfuturewatcher.html
 [qdoc-qfuture-result]: https://doc.qt.io/qt-6/qfuture.html#result
 [qdoc-qfuture-takeResult]: https://doc.qt.io/qt-6/qfuture.html#takeResult
 [qcoro-coro]: ../coro/coro.md

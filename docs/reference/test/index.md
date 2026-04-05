@@ -48,21 +48,21 @@ counterparts, the only difference being that they can be used inside a coroutine
 * [`QCORO_VERIFY_THROWS_EXCEPTION(exceptionType, ...)`][qdoc6-qverify-throws-exception]
 
 
-[qdoc-qtest]: https://doc.qt.io/qt-5/qttest-index.html
-[qdoc-qcompare]: https://doc.qt.io/qt-5/qtest.html#QCOMPARE
-[qdoc-qexpect-fail]: https://doc.qt.io/qt-5/qtest.html#QEXPECT_FAIL
-[qdoc-qfail]: https://doc.qt.io/qt-5/qtest.html#QFAIL
-[qdoc-qskip]: https://doc.qt.io/qt-5/qtest.html#QSKIP
-[qdoc-qtest]: https://doc.qt.io/qt-5/qtest.html#QTEST
-[qdoc-qtry-compare]: https://doc.qt.io/qt-5/qtest.html#QTRY_COMPARE
-[qdoc-qtry-compare-with-timeout]: https://doc.qt.io/qt-5/qtest.html#QTRY_COMPARE_WITH_TIMEOUT
-[qdoc-qtry-verify2]: https://doc.qt.io/qt-5/qtest.html#QTRY_VERIFY2
-[qdoc-qtry-verify]: https://doc.qt.io/qt-5/qtest.html#QTRY_VERIFY
-[qdoc-qtry-verify2-with-timeout]: https://doc.qt.io/qt-5/qtest.html#QTRY_VERIFY2_WITH_TIMEOUT
-[qdoc-qtry-verify-with-timeout]: https://doc.qt.io/qt-5/qtest.html#QTRY_VERIFY_WITH_TIMEOUT
-[qdoc-qverify2]: https://doc.qt.io/qt-5/qtest.html#QVERIFY2
-[qdoc-qverify]: https://doc.qt.io/qt-5/qtest.html#QVERIFY
-[qdoc-qverify-exception-thrown]: https://doc.qt.io/qt-5/qtest.html#QVERIFY_EXCEPTION_THROWN
+[qdoc-qtest]: https://doc.qt.io/qt-6/qttest-index.html
+[qdoc-qcompare]: https://doc.qt.io/qt-6/qtest.html#QCOMPARE
+[qdoc-qexpect-fail]: https://doc.qt.io/qt-6/qtest.html#QEXPECT_FAIL
+[qdoc-qfail]: https://doc.qt.io/qt-6/qtest.html#QFAIL
+[qdoc-qskip]: https://doc.qt.io/qt-6/qtest.html#QSKIP
+[qdoc-qtest]: https://doc.qt.io/qt-6/qtest.html#QTEST
+[qdoc-qtry-compare]: https://doc.qt.io/qt-6/qtest.html#QTRY_COMPARE
+[qdoc-qtry-compare-with-timeout]: https://doc.qt.io/qt-6/qtest.html#QTRY_COMPARE_WITH_TIMEOUT
+[qdoc-qtry-verify2]: https://doc.qt.io/qt-6/qtest.html#QTRY_VERIFY2
+[qdoc-qtry-verify]: https://doc.qt.io/qt-6/qtest.html#QTRY_VERIFY
+[qdoc-qtry-verify2-with-timeout]: https://doc.qt.io/qt-6/qtest.html#QTRY_VERIFY2_WITH_TIMEOUT
+[qdoc-qtry-verify-with-timeout]: https://doc.qt.io/qt-6/qtest.html#QTRY_VERIFY_WITH_TIMEOUT
+[qdoc-qverify2]: https://doc.qt.io/qt-6/qtest.html#QVERIFY2
+[qdoc-qverify]: https://doc.qt.io/qt-6/qtest.html#QVERIFY
+[qdoc-qverify-exception-thrown]: https://doc.qt.io/qt-6/qtest.html#QVERIFY_EXCEPTION_THROWN
 [qdoc6-qverify-throws-exception]: https://doc.qt.io/qt-6/qtest.html#QVERIFY_THROWS_EXCEPTION
 
 

@@ -24,4 +24,4 @@ target_link_libraries(my-target QCoro::WebSockets)
 QT += QCoroWebSockets
 ```
 
-[qtdoc-websockets]: https://doc.qt.io/qt-5/qtwebsockets-index.html
+[qtdoc-websockets]: https://doc.qt.io/qt-6/qtwebsockets-index.html

@@ -55,9 +55,9 @@ const QDBusReply<...> reply = co_await pendigCall;
 {% include "../../examples/qdbus.cpp" %}
 ```
 
-[qdoc-qdbuspendingcall]: https://doc.qt.io/qt-5/qdbuspendingcall.html
-[qdoc-qdbuspendingreply]: https://doc.qt.io/qt-5/qdbuspendingreply.html
-[qdoc-qdbuspendingcallwatcher]: https://doc.qt.io/qt-5/qdbuspendingcallwatcher.html
-[qdoc-qdbuspendingcallwatcher-finished]: https://doc.qt.io/qt-5/qdbuspendingcallwatcher.html#finished
-[qdoc-qdbusabstractinterface-asyncCall]: https://doc.qt.io/qt-5/qdbusabstractinterface.html#asyncCall-1
+[qdoc-qdbuspendingcall]: https://doc.qt.io/qt-6/qdbuspendingcall.html
+[qdoc-qdbuspendingreply]: https://doc.qt.io/qt-6/qdbuspendingreply.html
+[qdoc-qdbuspendingcallwatcher]: https://doc.qt.io/qt-6/qdbuspendingcallwatcher.html
+[qdoc-qdbuspendingcallwatcher-finished]: https://doc.qt.io/qt-6/qdbuspendingcallwatcher.html#finished
+[qdoc-qdbusabstractinterface-asyncCall]: https://doc.qt.io/qt-6/qdbusabstractinterface.html#asyncCall-1
 [qcoro-coro]: ../coro/coro.md

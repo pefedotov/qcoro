@@ -9,9 +9,7 @@
 #include <QString>
 #include <QException>
 #include <QtConcurrentRun>
-#if QT_VERSION_MAJOR > 6
 #include <QPromise>
-#endif
 
 #include <thread>
 
@@ -173,7 +171,6 @@ private:
         QCORO_VERIFY_EXCEPTION_THROWN(co_await future, TestException);
     }
 
-#if QT_VERSION_MAJOR >= 6
     QCoro::Task<> testPropagateQExceptionFromVoidPromise_coro(QCoro::TestContext) {
         QPromise<void> promise;
         QTimer::singleShot(100ms, this, [&promise]() {
@@ -253,11 +250,6 @@ private:
         QVERIFY(called);
     }
 
-#endif
-
-// QPromise cancelling running future on destruction has been introduced in
-// Qt 6.3.
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 1)
     QCoro::Task<> testUnfinishedPromiseDestroyed_coro(QCoro::TestContext) {
         const auto future = [this]() {
             auto promise = std::make_shared<QPromise<int>>();
@@ -300,7 +292,6 @@ private Q_SLOTS:
 
         // If we got here without crashing, the test passed
     }
-#endif
 
 private Q_SLOTS:
     addTest(Triggers)
@@ -311,16 +302,12 @@ private Q_SLOTS:
     addCoroAndThenTests(QCoroWrapperTriggers)
     addTest(PropagateQExceptionFromVoidConcurrent)
     addTest(PropagateQExceptionFromNonvoidConcurrent)
-#if QT_VERSION_MAJOR >= 6
     addTest(PropagateQExceptionFromVoidPromise)
     addTest(PropagateQExceptionFromNonvoidPromise)
     addTest(PropagateStdExceptionFromVoidPromise)
     addTest(PropagateStdExceptionFromNonvoidPromise)
     addCoroAndThenTests(TakeResult)
-#endif
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 1)
     addTest(UnfinishedPromiseDestroyed)
-#endif
 };
 
 QTEST_GUILESS_MAIN(QCoroFutureTest)
