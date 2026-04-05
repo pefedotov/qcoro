@@ -93,8 +93,8 @@ public:
      const auto reply = co_await qCoro(pendingReply).waitForFinished();
      ```
 
-     [qdoc-qdbuspendingcallwatcher]: https://doc.qt.io/qt-5/qdbuspendingcallwatcher.html
-     [qdoc-qdbuspendingcallwatcher-finished]: https://doc.qt.io/qt-5/qdbuspendingcallwatcher.html#finished
+     [qdoc-qdbuspendingcallwatcher]: https://doc.qt.io/qt-6/qdbuspendingcallwatcher.html
+     [qdoc-qdbuspendingcallwatcher-finished]: https://doc.qt.io/qt-6/qdbuspendingcallwatcher.html#finished
 
      <!-- doc-waitForFinished-end -->
 

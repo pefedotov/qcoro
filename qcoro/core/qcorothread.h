@@ -65,7 +65,7 @@ public:
      *
      * See [`QThread::started()`][qtdoc-qthread-started] documentation for details.
      *
-     * [qtdoc-qthread-started]: https://doc.qt.io/qt-5/qthread.html#started
+     * [qtdoc-qthread-started]: https://doc.qt.io/qt-6/qthread.html#started
      */
     Task<bool> waitForStarted(std::chrono::milliseconds timeout = std::chrono::milliseconds{-1});
 
@@ -80,7 +80,7 @@ public:
      *
      * See [`QThread::finished()`][qtdoc-qthread-finished] documentation for details.
      *
-     * [qdoc-qthread-finished]: https://doc.qt.io/qt-5/qthread.html#finished
+     * [qdoc-qthread-finished]: https://doc.qt.io/qt-6/qthread.html#finished
      */
     Task<bool> waitForFinished(std::chrono::milliseconds timeout = std::chrono::milliseconds{-1});
 

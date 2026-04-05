@@ -29,7 +29,7 @@ public:
      * \return Returns `true` when successfully connected, `false` is an error occured or the connection
      * wasn't established within the given timeout.
      *
-     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForConnected
+     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForConnected
      */
     Task<bool> waitForConnected(int timeout_msecs = 30'000);
 
@@ -42,7 +42,7 @@ public:
      * \return Returns `true` when successfully connected, `false` is an error occured or the connection
      * wasn't established within the given timeout.
      *
-     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForConnected
+     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForConnected
      */
     Task<bool> waitForConnected(std::chrono::milliseconds timeout);
 
@@ -55,7 +55,7 @@ public:
      * wasn't connected, or doesn't disconnected within the specified timeout, the coroutine returns
      * `false`.
      *
-     * [qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qlocalsocket.hmtl#waitForDisconnected
+     * [qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qlocalsocket.hmtl#waitForDisconnected
      */
     Task<bool> waitForDisconnected(int timeout_msecs = 30'000);
 
@@ -69,7 +69,7 @@ public:
      * wasn't connected, or doesn't disconnected within the specified timeout, the coroutine returns
      * `false`.
      *
-     * [qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qlocalsocket.hmtl#waitForDisconnected
+     * [qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qlocalsocket.hmtl#waitForDisconnected
      */
     Task<bool> waitForDisconnected(std::chrono::milliseconds timeout);
 
@@ -83,8 +83,8 @@ public:
      *
      * \return Returns `true` when connection is successfully established, `false` otherwise.
      *
-     * [qtdoc-qlocalsocket-connectToServer]: https://doc.qt.io/qt-5/qlocalsocket.html#connectToServer
-     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForConnected
+     * [qtdoc-qlocalsocket-connectToServer]: https://doc.qt.io/qt-6/qlocalsocket.html#connectToServer
+     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForConnected
      */
     Task<bool> connectToServer(QIODevice::OpenMode openMode = QIODevice::ReadWrite,
                                std::chrono::milliseconds timeout = std::chrono::seconds{30});
@@ -99,8 +99,8 @@ public:
      *
      * \returns Returns `true` when connection is successfully established, `false` otherwise.
      *
-     * [qtdoc-qlocalsocket-connectToServer-1]: https://doc.qt.io/qt-5/qlocalsocket.html#connectToServer-1
-     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForConnected
+     * [qtdoc-qlocalsocket-connectToServer-1]: https://doc.qt.io/qt-6/qlocalsocket.html#connectToServer-1
+     * [qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForConnected
      */
     Task<bool> connectToServer(const QString &name, QIODevice::OpenMode openMode = QIODevice::ReadWrite,
                                std::chrono::milliseconds timeout = std::chrono::seconds{30});

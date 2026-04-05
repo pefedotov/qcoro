@@ -33,7 +33,7 @@ public:
      *
      * If \c timeout_msecs is -1 the operation will never time out.
      *
-     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-5/qprocess.html#waitForStarted
+     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-6/qprocess.html#waitForStarted
      */
     Task<bool> waitForStarted(int timeout_msecs = 30'000);
 
@@ -46,7 +46,7 @@ public:
      * Unlike the Qt version, this overload uses `std::chrono::milliseconds` to express the
      * timeout rather than plain `int`. If the \c timeout is -1 the operation will never time out.
      *
-     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-5/qprocess.html#waitForStarted
+     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-6/qprocess.html#waitForStarted
      */
     Task<bool> waitForStarted(std::chrono::milliseconds timeout);
 
@@ -58,7 +58,7 @@ public:
      *
      * If \c timeout_msecs is -1 the operation will never time out.
      *
-     * [qtdoc-qprocess-waitForFinished]: https://doc.qt.io/qt-5/qprocess.html#waitForFinished
+     * [qtdoc-qprocess-waitForFinished]: https://doc.qt.io/qt-6/qprocess.html#waitForFinished
      */
     Task<bool> waitForFinished(int timeout_msecs = 30'000);
 
@@ -86,8 +86,8 @@ public:
      *
      * If the \c timeout is -1 the operation will never time out.
      *
-     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-5/qprocess.html#waitForStarted
-     * [qtdoc-qprocess-start-2]: https://doc.qt.io/qt-5/qprocess.html#start-2
+     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-6/qprocess.html#waitForStarted
+     * [qtdoc-qprocess-start-2]: https://doc.qt.io/qt-6/qprocess.html#start-2
      */
     Task<bool> start(QIODevice::OpenMode mode = QIODevice::ReadWrite,
                      std::chrono::milliseconds timeout = std::chrono::seconds(30));
@@ -103,8 +103,8 @@ public:
      *
      * If the \c timeout is -1 the operation will never time out.
      *
-     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-5/qprocess.html#waitForStarted
-     * [qtdoc-qprocess-start]: https://doc.qt.io/qt-5/qprocess.html#start-2
+     * [qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-6/qprocess.html#waitForStarted
+     * [qtdoc-qprocess-start]: https://doc.qt.io/qt-6/qprocess.html#start-2
      */
     Task<bool> start(const QString &program, const QStringList &arguments,
                      QIODevice::OpenMode mode = QIODevice::ReadWrite,

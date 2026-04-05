@@ -42,7 +42,7 @@ public:
      * \return Returns \c QTcpSocket of the pending connection. Returns `nullptr` if the server is not in
      * the listening state or if the call times out.
      *
-     * [qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-5/qtcpserver.html#waitForNewConnection
+     * [qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-6/qtcpserver.html#waitForNewConnection
      */
     Task<QTcpSocket *> waitForNewConnection(int timeout_msecs = 30'000);
 
@@ -54,7 +54,7 @@ public:
      * \return Returns \c QTcpSocket of the pending connection. Returns `nullptr` if the server is not in
      * the listening state or if the call times out.
      *
-     * [qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-5/qtcpserver.html#waitForNewConnection
+     * [qtdoc-qtcpserver-waitForNewConnection]: https://doc.qt.io/qt-6/qtcpserver.html#waitForNewConnection
      */
     Task<QTcpSocket *> waitForNewConnection(std::chrono::milliseconds timeout);
 

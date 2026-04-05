@@ -82,8 +82,8 @@ public:
      * device.readAll();
      * ```
      *
-     * [qdoc-qiodevice-readall]: https://doc.qt.io/qt-5/qiodevice.html#readAll
-     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-5/qiodevice.html#readyRead
+     * [qdoc-qiodevice-readall]: https://doc.qt.io/qt-6/qiodevice.html#readAll
+     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-6/qiodevice.html#readyRead
      */
     Task<QByteArray> readAll(std::chrono::milliseconds timeout = std::chrono::milliseconds{-1});
 
@@ -104,8 +104,8 @@ public:
      * device.read();
      * ```
      *
-     * [qdoc-qiodevice-read]: https://doc.qt.io/qt-5/qiodevice.html#read-1
-     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-5/qiodevice.html#readyRead
+     * [qdoc-qiodevice-read]: https://doc.qt.io/qt-6/qiodevice.html#read-1
+     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-6/qiodevice.html#readyRead
      */
     Task<QByteArray> read(qint64 maxSize,
                           std::chrono::milliseconds timeout = std::chrono::milliseconds{-1});
@@ -128,8 +128,8 @@ public:
      * device.readLine();
      * ```
      *
-     * [qdoc-qiodevice-readLine]: https://doc.qt.io/qt-5/qiodevice.html#readLine
-     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-5/qiodevice.html#readyRead
+     * [qdoc-qiodevice-readLine]: https://doc.qt.io/qt-6/qiodevice.html#readLine
+     * [qdoc-qiodevice-readyRead]: https://doc.qt.io/qt-6/qiodevice.html#readyRead
      */
     Task<QByteArray> readLine(qint64 maxSize = 0,
                               std::chrono::milliseconds timeout = std::chrono::milliseconds{-1});
@@ -150,8 +150,8 @@ public:
      * device.waitForBytesWritten();
      * ```
      *
-     * [qdoc-qiodevice-write]: https://doc.qt.io/qt-5/qiodevice.html#write-2
-     * [qdoc-qiodevice-bytesWritten]: https://doc.qt.io/qt-5/qiodevice.html#bytesWritten
+     * [qdoc-qiodevice-write]: https://doc.qt.io/qt-6/qiodevice.html#write-2
+     * [qdoc-qiodevice-bytesWritten]: https://doc.qt.io/qt-6/qiodevice.html#bytesWritten
      */
     Task<qint64> write(const QByteArray &buffer);
 
@@ -161,7 +161,7 @@ public:
      * Unlike the Qt version, this overload uses `std::chrono::milliseconds` to express the
      * timeout rather than plain `int`. If the \c timeout is -1, the operation will enver time out.
      *
-     * [qdoc-qiodevice-waitForReadyRead]: https://doc.qt.io/qt-5/qiodevice.html#waitForReadyRead
+     * [qdoc-qiodevice-waitForReadyRead]: https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead
      */
     Task<bool> waitForReadyRead(std::chrono::milliseconds timeout);
 
@@ -170,7 +170,7 @@ public:
      *
      * If the \c timeout_msecs is -1, the operation will never time out.
      *
-     * [qdoc-qiodevice-waitForReadyRead]: https://doc.qt.io/qt-5/qiodevice.html#waitForReadyRead
+     * [qdoc-qiodevice-waitForReadyRead]: https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead
      */
     Task<bool> waitForReadyRead(int timeout_msecs);
 
@@ -180,7 +180,7 @@ public:
      * Unlike the Qt version, this overload uses `std::chrono::milliseconds` to express the
      * timeout rather than plain `int`. If the \c timeout is -1, the operation will never time out.
      *
-     * [qdoc-qiodevice-waitForBytesWritten]: https://doc.qt.io/qt-5/qiodevice.html#waitForBytesWritten
+     * [qdoc-qiodevice-waitForBytesWritten]: https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten
      */
     Task<std::optional<qint64>> waitForBytesWritten(std::chrono::milliseconds timeout);
 
@@ -189,7 +189,7 @@ public:
      *
      * If the \c timeout_msecs is -1, the operation will never time out.
      *
-     * [qdoc-qiodevice-waitForBytesWritten]: https://doc.qt.io/qt-5/qiodevice.html#waitForBytesWritten
+     * [qdoc-qiodevice-waitForBytesWritten]: https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten
      */
     Task<std::optional<qint64>> waitForBytesWritten(int timeout_msecs);
 

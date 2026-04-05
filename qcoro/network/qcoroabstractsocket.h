@@ -31,7 +31,7 @@ public:
      *
      * If the timeout is -1, the operation will never time out.
      *
-     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForConnected
+     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForConnected
      */
     Task<bool> waitForConnected(int timeout_msecs = 30'000);
 
@@ -44,7 +44,7 @@ public:
      * timeout rather than plain `int`. If the timeout is -1, the operation will never time out.
      *
      *
-     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForConnected
+     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForConnected
      */
     Task<bool> waitForConnected(std::chrono::milliseconds timeout);
 
@@ -56,7 +56,7 @@ public:
      *
      * If the timeout is -1, the operation will never time out.
      *
-     * [qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qabstractsocket.hmtl#waitForDisconnected
+     * [qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qabstractsocket.hmtl#waitForDisconnected
      */
     Task<bool> waitForDisconnected(int timeout_msecs = 30'000);
 
@@ -69,7 +69,7 @@ public:
      * Unlike the Qt version, this overload uses `std::chrono::milliseconds` to express the
      * timeout rather than plain `int`. If the timeout is -1, the operation will never time out.
      *
-     * [qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qabstractsocket.hmtl#waitForDisconnected
+     * [qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qabstractsocket.hmtl#waitForDisconnected
      */
     Task<bool> waitForDisconnected(std::chrono::milliseconds timeout);
 
@@ -81,8 +81,8 @@ public:
      * Returns `true` if the connection has been successfully established withint he given timeout,
      * `false` otherwise. If the timeout is -1, the operation will never time out.
      *
-     * [qtdoc-qabstractsocket-connectToHost]: https://doc.qt.io/qt-5/qabstractsocket.html#connectToHost
-     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForConnected
+     * [qtdoc-qabstractsocket-connectToHost]: https://doc.qt.io/qt-6/qabstractsocket.html#connectToHost
+     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForConnected
      */
     Task<bool> connectToHost(const QString &hostName, quint16 port,
                              QIODevice::OpenMode openMode = QIODevice::ReadWrite,
@@ -97,8 +97,8 @@ public:
      * Returns `true` if the connection has been successfully established within the given timeout,
      * `false` otherwise. If the timeout is -1, the operation will never time out.
      *
-     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForConnected
-     * [qtdoc-qabstractsocket-connectToHost-1]: https://doc.qt.io/qt-5/qabstractsocket.html#connectToHost-1
+     * [qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForConnected
+     * [qtdoc-qabstractsocket-connectToHost-1]: https://doc.qt.io/qt-6/qabstractsocket.html#connectToHost-1
      */
     Task<bool> connectToHost(const QHostAddress &address, quint16 port,
                              QIODevice::OpenMode openMode = QIODevice::ReadWrite,
