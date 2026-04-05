@@ -7,6 +7,7 @@
 #include <QCoro/QCoroTask>
 #include <QJSValue>
 #include <QJSEngine>
+#include <QtQml/qqmlregistration.h>
 
 #include "qcoroqml_export.h"
 
@@ -22,6 +23,7 @@ class QmlTaskListener;
 //! QML type that allows to react to asynchronous computations from QML
 struct QCOROQML_EXPORT QmlTask {
     Q_GADGET
+    QML_VALUE_TYPE(task)
 
 public:
     // Just for Q_DECLARE_METATYPE to be happy
@@ -98,6 +100,7 @@ private:
 
 class QmlTaskListener : public QObject {
     Q_OBJECT
+    QML_ANONYMOUS
     Q_PROPERTY(QVariant value READ value NOTIFY valueChanged)
 
 public:

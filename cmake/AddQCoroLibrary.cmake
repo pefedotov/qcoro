@@ -79,7 +79,7 @@ function(add_qcoro_library)
     endfunction()
 
     set(params INTERFACE NO_CMAKE_CONFIG)
-    set(oneValueArgs NAME)
+    set(oneValueArgs NAME QML_MODULE)
     set(multiValueArgs SOURCES CAMELCASE_HEADERS HEADERS QCORO_LINK_LIBRARIES QT_LINK_LIBRARIES)
 
     cmake_parse_arguments(LIB "${params}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
@@ -105,13 +105,24 @@ function(add_qcoro_library)
         OUTPUT qt_LIBS
     )
 
-    # TODO: How is it done in Qt?
-    # We want to export target QCoro5::Network but so far we are exporting
-    # QCoro5::QCoro5Network :shrug:
     add_library(${target_name} ${target_interface})
     add_library(${QCORO_TARGET_PREFIX}::${LIB_NAME} ALIAS ${target_name})
+
     if (LIB_SOURCES)
         target_sources(${target_name} PRIVATE ${LIB_SOURCES})
+    endif()
+    if (LIB_QML_MODULE)
+        if (NOT DEFINED QT_QML_INSTALL_DIR)
+            ecm_query_qt(QT_QML_INSTALL_DIR QT_INSTALL_QML)
+        endif()
+        qt_add_qml_module(
+            ${target_name}
+            URI ${LIB_QML_MODULE}
+            OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/${LIB_QML_MODULE}"
+            VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+            TYPEINFO "${LIB_QML_MODULE}.qmltypes"
+            OUTPUT_TARGETS _qml_module_targets
+        )
     endif()
 
     target_include_directories(
@@ -141,7 +152,7 @@ function(add_qcoro_library)
     )
 
     set_target_defaults(${target_name})
-    
+
     if (NOT LIB_INTERFACE)
         set_target_properties(
             ${target_name}
@@ -209,9 +220,18 @@ function(add_qcoro_library)
     )
 
     install(
-        TARGETS ${target_name}
+        TARGETS ${target_name} ${_qml_module_targets}
         EXPORT ${target_name}Targets
     )
+    if (LIB_QML_MODULE AND TARGET "${target_name}plugin")
+        install(
+            TARGETS "${target_name}plugin"
+            EXPORT ${target_name}Targets
+            LIBRARY DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            ARCHIVE DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            RUNTIME DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+        )
+    endif()
     install(
         FILES ${source_HEADERS}
         DESTINATION ${QCORO_INSTALL_INCLUDEDIR}/qcoro/
@@ -255,4 +275,17 @@ function(add_qcoro_library)
         DESTINATION "${ECM_MKSPECS_INSTALL_DIR}"
         COMPONENT Devel
     )
+
+    if (LIB_QML_MODULE)
+        # Install QML module files (qmldir, qmltypes, plugin) to the QML import path
+        set(_qml_output_dir "${CMAKE_CURRENT_BINARY_DIR}/${LIB_QML_MODULE}")
+        if (NOT DEFINED QT_QML_INSTALL_DIR)
+            ecm_query_qt(QT_QML_INSTALL_DIR QT_INSTALL_QML)
+        endif()
+        install(
+            FILES "${_qml_output_dir}/qmldir"
+                  "${_qml_output_dir}/${LIB_QML_MODULE}.qmltypes"
+            DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+        )
+    endif()
 endfunction()
