@@ -64,7 +64,7 @@ jobs:
               })();</script><!-- End Matomo Code -->{% endblock %}" > docs/overrides/main.html
           mkdocs build --verbose
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: site
           path: site
