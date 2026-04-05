@@ -6,7 +6,7 @@ SPDX-License-Identifier: GFDL-1.3-or-later
 
 # QCoro
 
-C++ Coroutine Library for Qt5 and Qt6
+C++ Coroutine Library for Qt
 
 ---
 
@@ -58,13 +58,10 @@ of this documentation.
 
 ## Supported Qt Versions
 
-QCoro supports compiling for both Qt5 and Qt6. Minimum supported versions are:
+QCoro requires Qt 6.8 or later.
 
-* Qt5 >= 5.15.2
-* Qt6 >= 6.2.0
-
-Pass `-DUSE_QT_VERSION=5` or `-DUSE_QT_VERSION=6` to CMake to force building QCoro with respective
-major version of Qt. QCoro will default to Qt6 when available and fallback to Qt5 otherwise.
+Pass `-DUSE_QT_VERSION=6` to CMake to explicitly select the Qt major version (useful when multiple
+Qt versions are installed side by side).
 
 ## Supported Compilers
 

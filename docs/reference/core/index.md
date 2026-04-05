@@ -26,4 +26,4 @@ QT += QCoroCore
 ```
 
 
-[qtdoc-qtcore]: https://doc.qt.io/qt-5/qtcore-index.html
+[qtdoc-qtcore]: https://doc.qt.io/qt-6/qtcore-index.html

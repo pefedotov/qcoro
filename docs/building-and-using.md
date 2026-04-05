@@ -15,7 +15,7 @@ QCoro to customize the build:
 * `-DQCORO_BUILD_TESTING` - whether to build tests or not (defaults to `${BUILD_TESTING}`), can be used to disable building QCoro tests when building QCoro as part of a bigger project which has `BUILD_TESTING` enabled.
 * `-DQCORO_ENABLE_ASAN` - whether to build QCoro with AddressSanitizer (`OFF` by default).
 * `-DBUILD_SHARED_LIBS` - whether to build QCoro as a shared library (`OFF` by default).
-* `-DUSE_QT_VERSION` - set to `5` or `6` to force a particular version of Qt. When not set the highest available version is used.
+* `-DUSE_QT_VERSION` - set to `6` to explicitly select the Qt major version. When not set, Qt6 is detected automatically.
 * `-DQCORO_WITH_QTDBUS` - whether to compile support for QtDBus (`ON` by default).
 * `-DQCORO_WITH_QTNETWORK` - whether to compile support for QtNetwork (`ON` by default).
 * `-DQCORO_WITH_QTWEBSOCKETS` - whether to compile support for QtWebSockets (`ON` by default).
@@ -33,11 +33,7 @@ sudo make install
 
 ## CMake
 
-Depending on whether you want to use Qt5 or Qt6 build of QCoro, you should use `QCoro5` or QCoro6` in your
-CMake code, respectively. The example below is assuming Qt6:
-
 ```cmake
-# Use QCoro5 if you are building for Qt5!
 find_package(QCoro6 REQUIRED COMPONENTS Core Network DBus)
 
 # Set necessary compiler flags to enable coroutine support
@@ -48,9 +44,7 @@ qcoro_enable_coroutines()
 target_link_libraries(your-target QCoro::Core QCoro::Network QCoro::DBus)
 ```
 
-Note the missing Qt version number in the `QCoro` target namespace: QCoro provides both
-versioned (`QCoro5` and `QCoro6`) namespaces as well as version-less namespace, which is
-especially useful for transitioning codebase from Qt5 to Qt6.
+QCoro provides both versioned (`QCoro6`) and version-less (`QCoro`) target namespaces.
 
 ## QMake
 
@@ -64,9 +58,6 @@ CONFIG += c+=20
 # Enable coroutine support in the compiler
 QMAKE_CXXFLAGS += -fcoroutines
 ```
-
-You don't need to worry about Qt5 vs Qt6, qmake will pick up the correct build of QCoro depending
-on whether you are using QMake for Qt5 or Qt6.
 
 Currently it's necessary to manually enable C++20 and coroutine support (unless that's already
 default in your system/compiler settings).

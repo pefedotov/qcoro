@@ -79,5 +79,5 @@ const auto tomorrow_midnight = std::mktime(&gt);
 co_await QCoro::sleepUntil(std::chrono::system_clock::from_time_t(tomorrow_midnight));
 ```
 
-[qdoc-qtimer]: https://doc.qt.io/qt-5/qtimer.html
-[qdoc-qtimer-timeout]: https://doc.qt.io/qt-5/qtimer.html#timeout
+[qdoc-qtimer]: https://doc.qt.io/qt-6/qtimer.html
+[qdoc-qtimer-timeout]: https://doc.qt.io/qt-6/qtimer.html#timeout

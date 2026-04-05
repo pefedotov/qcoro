@@ -72,7 +72,6 @@ private:
     using WaitForFinishedOperation = std::conditional_t<
         std::is_void_v<T>, WaitForFinishedOperationImplVoid, WaitForFinishedOperationImplT>;
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     template<typename T_ =  T> requires (!std::is_void_v<T_>)
     class TakeResultOperation : public WaitForFinishedOperationBase<T_> {
     public:
@@ -82,8 +81,6 @@ private:
             return this->mFuture.takeResult();
         }
     };
-
-#endif
 
 
     friend struct awaiter_type<QFuture<T>>;
@@ -118,7 +115,6 @@ public:
         co_return co_await WaitForFinishedOperation{mFuture};
     }
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     /*!
      * \brief Asynchronously waits for the future to finish and takes (moves) the result from the future object.
      *
@@ -133,7 +129,6 @@ public:
     Task<T> takeResult() requires (!std::is_void_v<T>) {
         co_return std::move(co_await TakeResultOperation<T>{mFuture});
     }
-#endif
 };
 
 template<typename T>

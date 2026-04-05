@@ -1,7 +1,7 @@
 macro(qcoro_find_qt)
     set(options)
     set(oneValueArgs QT_VERSION FOUND_VER_VAR)
-    set(multiValueArgs COMPONENTS QT5_COMPONENTS QT6_COMPONENTS)
+    set(multiValueArgs COMPONENTS)
     cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     if (NOT ARGS_QT_VERSION)
@@ -9,18 +9,16 @@ macro(qcoro_find_qt)
         if (Qt6Core_FOUND)
             set(ARGS_QT_VERSION 6)
         else()
-            set(ARGS_QT_VERSION 5)
+            message(FATAL_ERROR "Qt6 not found. QCoro requires Qt ${MIN_REQUIRED_QT_VERSION} or later.")
         endif()
     endif()
-    
-    list(APPEND REQUIRED_QT_COMPONENTS "${ARGS_QT${ARGS_QT_VERSION}_COMPONENTS}")
+
     list(FILTER REQUIRED_QT_COMPONENTS EXCLUDE REGEX "Private$$")
 
     find_package(Qt${ARGS_QT_VERSION} REQUIRED COMPONENTS ${REQUIRED_QT_COMPONENTS})
 
-    if ("${ARGS_QT_VERSION}" STREQUAL "6" AND Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    if (${ARGS_QT_VERSION} VERSION_GREATER_EQUAL 6 AND Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
         list(APPEND REQUIRED_PRIVATE_QT_COMPONENTS "${ARGS_COMPONENTS}")
-        list(APPEND REQUIRED_PRIVATE_QT_COMPONENTS "${ARGS_QT${ARGS_QT_VERSION}_COMPONENTS}")
         list(FILTER REQUIRED_PRIVATE_QT_COMPONENTS INCLUDE REGEX "Private$$")
 
         if (REQUIRED_PRIVATE_QT_COMPONENTS)

@@ -609,11 +609,7 @@ private Q_SLOTS:
             co_return 42;
         };
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         QVERIFY_THROWS_EXCEPTION(std::runtime_error, QCoro::waitFor(coro()));
-#else
-        QVERIFY_EXCEPTION_THROWN(QCoro::waitFor(coro()), std::runtime_error);
-#endif
     }
 
     void testWaitForRethrowsException() {
@@ -622,11 +618,7 @@ private Q_SLOTS:
             throw std::runtime_error("Exception");
         };
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         QVERIFY_THROWS_EXCEPTION(std::runtime_error, QCoro::waitFor(coro()));
-#else
-        QVERIFY_EXCEPTION_THROWN(QCoro::waitFor(coro()), std::runtime_error);
-#endif
     }
 
 

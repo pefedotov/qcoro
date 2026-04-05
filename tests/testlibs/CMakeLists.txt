@@ -19,11 +19,7 @@ if (QCORO_WITH_QTDBUS)
     )
 
     set(qcoro_test_dbus_SRCS)
-    if (${QT_VERSION_MAJOR} EQUAL 5)
-        qt5_add_dbus_interface(qcoro_test_dbus_SRCS cz.dvratil.qcorodbustest.xml qcorodbustestinterface)
-    else()
-        qt_add_dbus_interface(qcoro_test_dbus_SRCS cz.dvratil.qcorodbustest.xml qcorodbustestinterface)
-    endif()
+    qt_add_dbus_interface(qcoro_test_dbus_SRCS cz.dvratil.qcorodbustest.xml qcorodbustestinterface)
 
     add_library(qcoro_test_dbus OBJECT ${qcoro_test_dbus_SRCS})
     target_include_directories(qcoro_test_dbus PUBLIC

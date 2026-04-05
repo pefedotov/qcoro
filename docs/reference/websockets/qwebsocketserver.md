@@ -44,7 +44,7 @@ QCoro::Task<> listen(QWebSocketServer *server) {
 }
 ```
 
-[qtdoc-qwebsocketserver]: https://doc.qt.io/qt-5/qwebsocketserver.html
-[qtdoc-qwebsocketserver-pauseAccepting]: https://doc.qt.io/qt-5/qwebsocketserver.html#pauseAccepting
-[qtdoc-qwebsocketserver-listen]: https://doc.qt.io/qt-5/qwebsocketserver.html#listen
-[qtdoc-qwebsocket]: https://doc.qt.io/qt-5/qwebsocket.html
+[qtdoc-qwebsocketserver]: https://doc.qt.io/qt-6/qwebsocketserver.html
+[qtdoc-qwebsocketserver-pauseAccepting]: https://doc.qt.io/qt-6/qwebsocketserver.html#pauseAccepting
+[qtdoc-qwebsocketserver-listen]: https://doc.qt.io/qt-6/qwebsocketserver.html#listen
+[qtdoc-qwebsocket]: https://doc.qt.io/qt-6/qwebsocket.html

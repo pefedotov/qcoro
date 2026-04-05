@@ -73,9 +73,9 @@ QCoro::Task<bool> QCoroProcess::start(const QString &program, const QStringList 
 ```
 
 
-[qtdoc-qprocess]: https://doc.qt.io/qt-5/qprocess.html
-[qtdoc-qprocess-start]: https://doc.qt.io/qt-5/qprocess.html#start
-[qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-5/qprocess.html#waitForStarted
-[qtdoc-qprocess-waitForFiished]: https://doc.qt.io/qt-5/qprocess.html#waitForFinished
+[qtdoc-qprocess]: https://doc.qt.io/qt-6/qprocess.html
+[qtdoc-qprocess-start]: https://doc.qt.io/qt-6/qprocess.html#start
+[qtdoc-qprocess-waitForStarted]: https://doc.qt.io/qt-6/qprocess.html#waitForStarted
+[qtdoc-qprocess-waitForFiished]: https://doc.qt.io/qt-6/qprocess.html#waitForFinished
 [qcoro-coro]: ../coro/coro.md
 [qcoro-qcoroiodevice]: qiodevice.md

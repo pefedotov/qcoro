@@ -34,4 +34,4 @@ int main() {
 }
 ```
 
-[qtdoc-qml]: https://doc.qt.io/qt-5/qml-index.html
+[qtdoc-qml]: https://doc.qt.io/qt-6/qml-index.html

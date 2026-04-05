@@ -25,5 +25,5 @@ target_link_libraries(my-target QCoro::DBus)
 QT += QCoroDBus
 ```
 
-[qtdoc-qtdbus]: https://doc.qt.io/qt-5/qtdbus-index.html
+[qtdoc-qtdbus]: https://doc.qt.io/qt-6/qtdbus-index.html
 

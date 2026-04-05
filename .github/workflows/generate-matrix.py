@@ -2,21 +2,12 @@ import json
 from argparse import ArgumentParser
 from typing import Any, Optional
 
-qt5_config = {
-    "archives": ["qtbase", "icu", "qtwebsockets", "qtdeclarative", "qtwebchannel", "qtlocation"],
-    "modules": ["qtwebengine"]
-}
-
 qt6_config = {
     "archives": ["qtbase", "icu", "qtdeclarative"],
     "modules": ["qtwebsockets", "qtwebengine", "qtwebchannel", "qtpositioning"]
 }
 
 qt = [
-    {
-        "version": "5.15.2",
-        **qt5_config
-    },
     {
         "version": "6.8.0",
         **qt6_config
@@ -104,11 +95,6 @@ filtered_platforms = list(filter(lambda p: p['name'] == args.platform, platforms
 
 for qt_version in qt:
     for platform in filtered_platforms:
-        # Skip Qt5 on MacOS - the new runners are based on arm64, for which Qt5 doesn't have binary
-        # releases
-        if platform["name"] == "macos" and qt_version["version"].startswith("5"):
-            continue
-
         for compiler in platform["compilers"]:
             if "versions" in compiler:
                 for compiler_version in compiler["versions"]:

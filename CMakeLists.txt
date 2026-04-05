@@ -54,8 +54,6 @@ find_package(Threads REQUIRED)
 include(cmake/CheckAtomic.cmake)
 
 set(REQUIRED_QT_COMPONENTS Core)
-set(REQUIRED_QT5_COMPONENTS)
-set(REQUIRED_QT6_COMPONENTS)
 if (QCORO_WITH_QTDBUS)
     list(APPEND REQUIRED_QT_COMPONENTS DBus)
 endif()
@@ -69,9 +67,7 @@ if (QCORO_WITH_QTQUICK)
     list(APPEND REQUIRED_QT_COMPONENTS Gui Quick QuickPrivate)
 endif()
 if (QCORO_WITH_QML)
-    list(APPEND REQUIRED_QT_COMPONENTS Qml)
-    # Qt6 needs access to private API
-    list(APPEND REQUIRED_QT6_COMPONENTS QmlPrivate)
+    list(APPEND REQUIRED_QT_COMPONENTS Qml QmlPrivate)
 endif()
 if (QCORO_WITH_QTTEST)
     list(APPEND REQUIRED_QT_COMPONENTS Test)
@@ -83,17 +79,13 @@ if (BUILD_TESTING)
     list(APPEND REQUIRED_QT_COMPONENTS Test Concurrent)
 endif()
 
-set(MIN_REQUIRED_QT5_VERSION "5.12")
-set(MIN_REQUIRED_QT6_VERSION "6.8")
+set(MIN_REQUIRED_QT_VERSION "6.8")
 
 include(cmake/QCoroFindQt.cmake)
-# Find Qt. If USE_QT_VERSION is not set, it will try to look for Qt6 first
-# and fallback to Qt5 otherwise.
+# Find Qt. If USE_QT_VERSION is not set, it will auto-detect the installed Qt version.
 qcoro_find_qt(
     QT_VERSION "${USE_QT_VERSION}"
     COMPONENTS "${REQUIRED_QT_COMPONENTS}"
-    QT5_COMPONENTS "${REQUIRED_QT5_COMPONENTS}"
-    QT6_COMPONENTS "${REQUIRED_QT6_COMPONENTS}"
     FOUND_VER_VAR QT_VERSION_MAJOR
 )
 

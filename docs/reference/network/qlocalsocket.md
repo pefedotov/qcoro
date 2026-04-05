@@ -97,10 +97,10 @@ QCoro::Task<QByteArray> requestDataFromServer(const QString &serverName) {
 }
 ```
 
-[qtdoc-qiodevice]: https://doc.qt.io/qt-5/qiodevice.html
-[qtdoc-qlocalsocket]: https://doc.qt.io/qt-5/qlocalsocket.html
-[qtdoc-qlocalsocket-connectToServer]: https://doc.qt.io/qt-5/qlocalsocket.html#connectToServer
-[qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForConnected
-[qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qlocalsocket.html#waitForDisconnected
+[qtdoc-qiodevice]: https://doc.qt.io/qt-6/qiodevice.html
+[qtdoc-qlocalsocket]: https://doc.qt.io/qt-6/qlocalsocket.html
+[qtdoc-qlocalsocket-connectToServer]: https://doc.qt.io/qt-6/qlocalsocket.html#connectToServer
+[qtdoc-qlocalsocket-waitForConnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForConnected
+[qtdoc-qlocalsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qlocalsocket.html#waitForDisconnected
 [qcoro-coro]: ../coro/coro.md
 [qcoro-qcoroiodevice]: ../core/qiodevice.md

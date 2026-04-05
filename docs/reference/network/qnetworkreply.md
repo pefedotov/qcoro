@@ -31,8 +31,8 @@ To make it work, include `QCoroNetworkReply` in your implementation.
 {% include "../../examples/qnetworkreply.cpp" %}
 ```
 
-[qdoc-qnetworkreply]: https://doc.qt.io/qt-5/qnetworkreply.html
-[qdoc-qnetworkreply-finished]: https://doc.qt.io/qt-5/qnetworkreply.html#finished
-[qdoc-qiodevice]: https://doc.qt.io/qt-5/qiodevice.html
+[qdoc-qnetworkreply]: https://doc.qt.io/qt-6/qnetworkreply.html
+[qdoc-qnetworkreply-finished]: https://doc.qt.io/qt-6/qnetworkreply.html#finished
+[qdoc-qiodevice]: https://doc.qt.io/qt-6/qiodevice.html
 [qcoro-iodevice]: ../core/qiodevice.md
 

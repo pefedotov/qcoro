@@ -86,12 +86,12 @@ QCoro::Task<bool> QCoroAbstractSocket::connectToHost(const QString &hostName, qu
 {% include "../../examples/qtcpsocket.cpp" %}
 ```
 
-[qtdoc-qiodevice]: https://doc.qt.io/qt-5/qiodevice.html
-[qtdoc-qtcpsocket]: https://doc.qt.io/qt-5/qtcpsocket.html
-[qtdoc-qudpsocket]: https://doc.qt.io/qt-5/qudpsocket.html
-[qtdoc-qabstractsocket]: https://doc.qt.io/qt-5/qabstractsocket.html
-[qtdoc-qabstractsocket-connectToServer]: https://doc.qt.io/qt-5/qabstractsocket.html#connectToServer
-[qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForConnected
-[qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-5/qabstractsocket.html#waitForDisconnected
+[qtdoc-qiodevice]: https://doc.qt.io/qt-6/qiodevice.html
+[qtdoc-qtcpsocket]: https://doc.qt.io/qt-6/qtcpsocket.html
+[qtdoc-qudpsocket]: https://doc.qt.io/qt-6/qudpsocket.html
+[qtdoc-qabstractsocket]: https://doc.qt.io/qt-6/qabstractsocket.html
+[qtdoc-qabstractsocket-connectToServer]: https://doc.qt.io/qt-6/qabstractsocket.html#connectToServer
+[qtdoc-qabstractsocket-waitForConnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForConnected
+[qtdoc-qabstractsocket-waitForDisconnected]: https://doc.qt.io/qt-6/qabstractsocket.html#waitForDisconnected
 [qcoro-coro]: ../coro/coro.md
 [qcoro-qcoroiodevice]: ../core/qiodevice.md

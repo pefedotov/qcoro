@@ -19,13 +19,6 @@ namespace QCoro::detail {
 template<typename ... Args>
 class QCoroDBusPendingReply {
 private:
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    // QDBusPendingReply is a variadic template since Qt6, but in Qt5 the
-    // maximum number of template arguments was 8, so we simulate the Qt5
-    // behavior here.
-    static_assert(sizeof...(Args) <= 8, "In Qt5 QDBusPendingReply has maximum 8 arguments.");
-#endif
-
     class WaitForFinishedOperation {
     public:
         explicit WaitForFinishedOperation(const QDBusPendingReply<Args ...> &reply)

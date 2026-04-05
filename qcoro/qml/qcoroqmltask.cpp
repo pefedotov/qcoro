@@ -8,12 +8,10 @@
 
 #include <optional>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_MSVC(4458 4201)
 #include <private/qjsvalue_p.h>
 QT_WARNING_POP
-#endif
 
 Q_DECLARE_LOGGING_CATEGORY(qcoroqml)
 Q_LOGGING_CATEGORY(qcoroqml, "qcoro.qml")
@@ -30,15 +28,7 @@ struct QmlTaskPrivate : public QSharedData {
 };
 
 inline QJSEngine *getEngineForValue(const QJSValue &val) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    // QJSValue::engine is deprecated, but still nicer, since it doesn't require using private symbols
-    QT_WARNING_PUSH
-    QT_WARNING_DISABLE_DEPRECATED
-    return val.engine();
-    QT_WARNING_POP
-#else
     return QJSValuePrivate::engine(&val)->jsEngine();
-#endif
 }
 
 QmlTask::QmlTask() noexcept : d(new QmlTaskPrivate())
