@@ -10,6 +10,7 @@
 
 namespace QCoro::Qml {
 
+[[deprecated("Use 'import QCoro' in QML instead")]]
 QCOROQML_EXPORT void registerTypes();
 
 }

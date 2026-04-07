@@ -6,6 +6,7 @@
 add_qcoro_library(
     NAME Qml
     INCLUDEDIR Qml
+    QML_MODULE QCoro
     SOURCES
         qcoroqmltask.cpp
         qcoroqml.cpp

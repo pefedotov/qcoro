@@ -68,11 +68,8 @@ private:
             return new QmlObject();
         });
 
-        QCoro::Qml::registerTypes();
-
         engine.loadData(R"(
 import qcoro.test 0.1
-import QCoro 0
 import QtQuick 2.7
 
 QtObject {
@@ -119,7 +116,7 @@ QtObject {
             running = false;
         });
 
-        // Crash the test in case the timeout was reachaed without the callback being called
+        // Crash the test in case the timeout was reached without the callback being called
         connect(timeout, &QTimer::timeout, this, [&]() {
 #if defined(Q_CC_CLANG) && defined(Q_OS_WINDOWS)
             running = false;

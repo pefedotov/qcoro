@@ -18,7 +18,6 @@ int main()
 {
     ...
     qmlRegisterType<Example>("io.me.qmlmodule", 1, 0, "Example");
-    QCoro::Qml::registerTypes();
     ...
 }
 

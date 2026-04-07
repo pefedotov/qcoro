@@ -5,8 +5,7 @@ SPDX-License-Identifier: GFDL-1.3-or-later
 
 # QML Module
 
-The `QML` module contains coroutine-friendly wrappers for
-[QtQml][qtdoc-qml] classes.
+The QCoro `QML` module contains coroutine-friendly wrappers for [QtQml][qtdoc-qml] classes.
 
 ## CMake Usage
 
@@ -22,16 +21,5 @@ target_link_libraries(my-target QCoro::Qml)
 QT += QCoroQml
 ```
 
-## Type registration
-
-To use types defined in QCoroQml, you need to call the `QCoro::Qml::registerTypes` function before loading the QML.
-
-```C++
-int main() {
-    ...
-    QCoro::Qml::registerTypes();
-    ...
-}
-```
 
 [qtdoc-qml]: https://doc.qt.io/qt-6/qml-index.html
