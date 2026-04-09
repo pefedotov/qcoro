@@ -112,8 +112,8 @@ function(add_qcoro_library)
         target_sources(${target_name} PRIVATE ${LIB_SOURCES})
     endif()
     if (LIB_QML_MODULE)
-        if (NOT DEFINED QT_QML_INSTALL_DIR)
-            ecm_query_qt(QT_QML_INSTALL_DIR QT_INSTALL_QML)
+        if (NOT DEFINED QML_INSTALL_DIR)
+            set(QML_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml")
         endif()
         qt_add_qml_module(
             ${target_name}
@@ -227,9 +227,9 @@ function(add_qcoro_library)
         install(
             TARGETS "${target_name}plugin"
             EXPORT ${target_name}Targets
-            LIBRARY DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
-            ARCHIVE DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
-            RUNTIME DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            LIBRARY DESTINATION "${QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            ARCHIVE DESTINATION "${QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            RUNTIME DESTINATION "${QML_INSTALL_DIR}/${LIB_QML_MODULE}"
         )
     endif()
     install(
@@ -279,13 +279,10 @@ function(add_qcoro_library)
     if (LIB_QML_MODULE)
         # Install QML module files (qmldir, qmltypes, plugin) to the QML import path
         set(_qml_output_dir "${CMAKE_CURRENT_BINARY_DIR}/${LIB_QML_MODULE}")
-        if (NOT DEFINED QT_QML_INSTALL_DIR)
-            ecm_query_qt(QT_QML_INSTALL_DIR QT_INSTALL_QML)
-        endif()
         install(
             FILES "${_qml_output_dir}/qmldir"
                   "${_qml_output_dir}/${LIB_QML_MODULE}.qmltypes"
-            DESTINATION "${QT_QML_INSTALL_DIR}/${LIB_QML_MODULE}"
+            DESTINATION "${QML_INSTALL_DIR}/${LIB_QML_MODULE}"
         )
     endif()
 endfunction()
